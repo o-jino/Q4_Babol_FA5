@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    var numberInput = prompt("Enter a number: ");
+
+    while (isNaN(numberInput)) {
+        numberInput = prompt("Enter a number: ");
+    }
+
+    document.write("Inputted number: " + numberInput + "<br>");
+
+    var isNumberOdd = numberInput % 2;
+    var countdownNumber = numberInput;
+
+    if (isNumberOdd == 1) {
+        while (countdownNumber > 0) {
+            document.write("<br>");
+            var rowCounter = numberInput;
+
+            while (rowCounter > 0) {
+                document.write(countdownNumber + " ");
+                rowCounter--;
+            }
+            countdownNumber--;
+        }
+    } else {
+        while (countdownNumber > 0) {
+            document.write("<br>");
+            var columnCounter = countdownNumber;
+
+            while (columnCounter > 0) {
+                document.write(countdownNumber + " ");
+                columnCounter--;
+            }
+            countdownNumber--;
+        }
+    }
+</script>
+<br><br>
+<a href="page2.html">next</a>
+</html>

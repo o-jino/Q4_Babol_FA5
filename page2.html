@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="text" id="contactInput" name="contactInput">
+        <input type="button" value="Add" onclick="addContact()">
+        <input type="button" value="Remove" onclick="removeContact()">
+    </form>
+    <p id="contactDisplay"></p>
+
+</body>
+<script>
+    var contactArray = [];
+    var addCounter = 0;
+
+    function addContact() {
+        addCounter++;
+        manageContacts();
+        var newContact = document.getElementById("contactInput").value;
+        contactArray.push(newContact); 
+        displayContacts();
+    }
+
+    function displayContacts() {
+        document.getElementById("contactDisplay").innerHTML = contactArray.join(", ");
+    }
+
+    function manageContacts() {
+        if (addCounter > 7) {
+            contactArray.shift();
+        }
+    }
+
+    function removeContact() {
+        contactArray.pop();
+        displayContacts();
+    }
+</script>
+<br><br>
+<a href="page1.html">page 1</a>
+</html>
